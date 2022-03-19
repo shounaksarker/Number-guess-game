@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext, useState } from "react";
+import { Container } from "react-bootstrap";
+import "./App.css";
+import Home from "./Components/Home/Home";
+export const MyContext = createContext();
 
 function App() {
+  const [chance, setChance] = useState();
+  const [guess, setGuess] = useState("-");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MyContext.Provider value={[chance, setChance, guess, setGuess]}>
+      <div className="App py-sm-0 py-3 d-flex align-items-sm-center align-items-start justify-content-center">
+        <Container className="cont">
+          <Home />
+        </Container>
+      </div>
+    </MyContext.Provider>
   );
 }
 
