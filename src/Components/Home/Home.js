@@ -14,7 +14,7 @@ const Home = () => {
   const [random, setRandom] = useState();
   const [win, setWin] = useState();
   const [img, setImg] = useState(sideImg);
-  console.log("chance : ",chance,"random, : ",random,"guess: ",guess,"win : ",win);
+  // console.log("chance : ",chance,"random, : ",random,"guess: ",guess,"win : ",win);
 
   useEffect(() => {
     if (guess === random) {
